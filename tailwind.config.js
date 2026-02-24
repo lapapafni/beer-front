@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],        // основной текст
-        serif: ['Playfair Display', 'serif'], // заголовки
+        sans: ['Inter', 'sans-serif'],        
+        serif: ['Playfair Display', 'serif'], 
       },
     },
   },

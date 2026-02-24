@@ -38,7 +38,7 @@ export async function apiFetch(
         errorMessage = errorData.message;
       }
     } catch {
-      // Ignore parsing error
+      
     }
     
     const error = new Error(errorMessage);

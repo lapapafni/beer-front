@@ -46,7 +46,7 @@ export default function SubmitPage() {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [dragActive, setDragActive] = useState(false);
 
-  // Состояние формы
+  
   const [form, setForm] = useState<FormData>({
     name: "",
     description: "",
@@ -58,7 +58,7 @@ export default function SubmitPage() {
     aftertasteScore: 3,
   });
 
-  // Проверка прав доступа
+  
   useEffect(() => {
     if (!isAuthenticated) {
       router.push("/login");
@@ -150,7 +150,7 @@ export default function SubmitPage() {
     setError(null);
 
     try {
-      // Валидация
+      
       if (!form.name.trim()) {
         throw new Error("Название пива обязательно");
       }
@@ -163,10 +163,10 @@ export default function SubmitPage() {
         throw new Error("Укажите корректный объем");
       }
 
-      // Создаем FormData для отправки
+      
       const submitData = new FormData();
       
-      // Добавляем все поля
+      
       submitData.append("name", form.name);
       submitData.append("description", form.description);
       submitData.append("price", form.price);
@@ -176,7 +176,7 @@ export default function SubmitPage() {
       submitData.append("tasteScore", form.tasteScore.toString());
       submitData.append("aftertasteScore", form.aftertasteScore.toString());
       
-      // Добавляем изображение, если есть
+      
       if (imageFile) {
         submitData.append("image", imageFile);
       }
@@ -261,11 +261,11 @@ export default function SubmitPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white py-20 px-6 md:px-20 font-sans">
-      {/* Декоративный фон */}
+      {}
       <DecorativeBackground />
 
       <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Кнопка назад */}
+        {}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -280,7 +280,7 @@ export default function SubmitPage() {
           </Link>
         </motion.div>
 
-        {/* Заголовок */}
+        {}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -294,7 +294,7 @@ export default function SubmitPage() {
           </p>
         </motion.div>
 
-        {/* Форма */}
+        {}
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -302,7 +302,7 @@ export default function SubmitPage() {
           onSubmit={handleSubmit}
           className="space-y-8"
         >
-          {/* Ошибка */}
+          {}
           {error && (
             <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 flex items-center gap-3">
               <ExclamationCircleIcon className="w-6 h-6 text-red-500 flex-shrink-0" />
@@ -310,7 +310,7 @@ export default function SubmitPage() {
             </div>
           )}
 
-          {/* Основная информация */}
+          {}
           <div className="bg-[#121212] rounded-3xl p-8 border border-gray-800">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <DocumentTextIcon className="w-6 h-6 text-amber-500" />
@@ -318,7 +318,7 @@ export default function SubmitPage() {
             </h2>
 
             <div className="space-y-6">
-              {/* Название */}
+              {}
               <div>
                 <label className="block text-sm font-medium text-gray-400 mb-2">
                   Название пива *
@@ -334,7 +334,7 @@ export default function SubmitPage() {
                 />
               </div>
 
-              {/* Описание */}
+              {}
               <div>
                 <label className="block text-sm font-medium text-gray-400 mb-2">
                   Описание
@@ -349,7 +349,7 @@ export default function SubmitPage() {
                 />
               </div>
 
-              {/* Цена и объем */}
+              {}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-2">
@@ -394,7 +394,7 @@ export default function SubmitPage() {
             </div>
           </div>
 
-          {/* Изображение */}
+          {}
           <div className="bg-[#121212] rounded-3xl p-8 border border-gray-800">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <PhotoIcon className="w-6 h-6 text-amber-500" />
@@ -451,7 +451,7 @@ export default function SubmitPage() {
             )}
           </div>
 
-          {/* Оценки */}
+          {}
           <div className="bg-[#121212] rounded-3xl p-8 border border-gray-800">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <StarIcon className="w-6 h-6 text-amber-500" />
@@ -505,7 +505,7 @@ export default function SubmitPage() {
             </div>
           </div>
 
-          {/* Кнопка отправки */}
+          {}
           <div className="flex justify-end">
             <button
               type="submit"

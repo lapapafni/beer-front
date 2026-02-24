@@ -18,7 +18,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // 🛡 Редирект если уже авторизован
+  
   useEffect(() => {
     if (isAuthenticated) {
       router.push("/");
@@ -85,7 +85,7 @@ export default function LoginPage() {
             className="p-3 rounded-xl bg-[#1f1f1f] border border-white/10 focus:outline-none focus:border-amber-500 transition"
           />
 
-          {/* 👁 Пароль */}
+          {}
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}

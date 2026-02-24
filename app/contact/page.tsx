@@ -20,11 +20,11 @@ import { HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid';
 export default function ContactsPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white py-20 px-6 md:px-20 font-sans">
-      {/* Декоративный фон */}
+      {}
       <DecorativeBackground />
 
       <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Кнопка назад */}
+        {}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -39,7 +39,7 @@ export default function ContactsPage() {
           </Link>
         </motion.div>
 
-        {/* Заголовок */}
+        {}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function ContactsPage() {
           </p>
         </motion.div>
 
-        {/* Автор сайта */}
+        {}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ export default function ContactsPage() {
           </div>
         </motion.section>
 
-        {/* Автор рецензий */}
+        {}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -171,7 +171,7 @@ export default function ContactsPage() {
           </div>
         </motion.section>
 
-        {/* Донаты - только DonationAlerts */}
+        {}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -193,7 +193,7 @@ export default function ContactsPage() {
               Это помогает создавать новые обзоры и дегустации, а также развивать проект.
             </p>
 
-            {/* Одна карточка DonationAlerts */}
+            {}
             <div className="flex justify-center">
               <a
                 href="https://www.donationalerts.com/r/ilya"

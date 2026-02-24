@@ -47,7 +47,7 @@ export const updateBeer = async (id: number, formData: FormData) => {
   return apiFetch(`${API_URL}/${id}`, {
     method: "PUT",
     body: formData,
-    headers: {} // Не устанавливаем Content-Type для FormData
+    headers: {} 
   });
 };
 

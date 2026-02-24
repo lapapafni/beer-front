@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-page-custom-font */
+
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
@@ -6,12 +6,12 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { AuthProvider } from "./context/authContext";
 
-// Оптимизированная загрузка Roboto через Next.js
+
 const roboto = Roboto({ 
   subsets: ['cyrillic', 'latin'],
   display: 'swap',
   variable: '--font-roboto',
-  weight: ['400', '500', '700'] // обычный, средний, жирный
+  weight: ['400', '500', '700'] 
 });
 
 export const metadata: Metadata = {
@@ -27,7 +27,6 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${roboto.variable}`}>
       <head>
-        {/* Резервное подключение Roboto */}
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
           rel="stylesheet"

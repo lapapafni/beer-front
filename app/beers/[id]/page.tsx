@@ -311,7 +311,7 @@ export default function BeerDetailPage() {
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white py-20 px-6 md:px-20 font-sans">
-      {/* Уведомление */}
+      {}
       <Notification
         show={notification.show}
         type={notification.type}
@@ -320,7 +320,7 @@ export default function BeerDetailPage() {
         onClose={closeNotification}
       />
 
-      {/* Модалка подтверждения удаления */}
+      {}
       <ConfirmModal
         isOpen={showDeleteModal}
         title="Удалить пиво?"
@@ -329,11 +329,11 @@ export default function BeerDetailPage() {
         onCancel={handleCancelDelete}
       />
 
-      {/* Декоративный фон как на главной */}
+      {}
       <DecorativeBackground />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Кнопка назад и действия админа */}
+        {}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -347,7 +347,7 @@ export default function BeerDetailPage() {
             Назад к списку
           </Link>
 
-          {/* Кнопки для админа - теперь с явной проверкой */}
+          {}
           {isAuthenticated && hasRole('admin') && (
             <div className="flex items-center gap-3">
               <Link
@@ -370,7 +370,7 @@ export default function BeerDetailPage() {
           )}
         </motion.div>
 
-        {/* Информация о пиве - BeerInfo */}
+        {}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -390,7 +390,7 @@ export default function BeerDetailPage() {
           />
         </motion.div>
 
-        {/* Заголовок для отзывов */}
+        {}
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -410,7 +410,7 @@ export default function BeerDetailPage() {
           )}
         </motion.h2>
 
-        {/* Блок оценок для авторизованных */}
+        {}
         {isAuthenticated ? (
           <motion.section 
             initial={{ opacity: 0, y: 20 }}
@@ -476,7 +476,7 @@ export default function BeerDetailPage() {
           </motion.div>
         )}
 
-        {/* Отзывы */}
+        {}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

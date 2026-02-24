@@ -87,7 +87,7 @@ export const CardReview: React.FC<Props> = ({
     setShowDeleteModal(false);
   };
 
-  // Проверяем, имеет ли пользователь роль moderator или admin
+  
   const canDelete = hasRole("moderator") || hasRole("admin");
 
   return (
@@ -101,20 +101,20 @@ export const CardReview: React.FC<Props> = ({
             whileHover={{ y: -2 }}
             className="group relative bg-[#121212] p-6 rounded-2xl shadow-lg hover:shadow-amber-500/10 transition-all duration-300 border border-gray-800 hover:border-amber-500/30"
           >
-            {/* Легкий подсвет как на главной */}
+            {}
             <div className="absolute inset-0 rounded-2xl bg-amber-500 opacity-0 group-hover:opacity-5 blur-xl transition-opacity pointer-events-none" />
 
             <div className="relative z-10 flex gap-4">
-              {/* Аватар с инициалом */}
+              {}
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-600 to-amber-400 flex items-center justify-center text-white font-bold text-lg shadow-lg">
                   {getInitials(User.username)}
                 </div>
               </div>
 
-              {/* Контент */}
+              {}
               <div className="flex-1">
-                {/* Заголовок с кнопкой удаления для модераторов */}
+                {}
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <UserCircleIcon className="w-5 h-5 text-amber-500" />
@@ -129,7 +129,7 @@ export const CardReview: React.FC<Props> = ({
                       <span>{new Date(createdAt).toLocaleDateString("ru-RU")}</span>
                     </div>
                     
-                    {/* Кнопка удаления для модераторов и админов */}
+                    {}
                     {canDelete && (
                       <button
                         onClick={handleDeleteClick}
@@ -143,12 +143,12 @@ export const CardReview: React.FC<Props> = ({
                   </div>
                 </div>
 
-                {/* Текст отзыва */}
+                {}
                 <p className="text-gray-300 mb-4 leading-relaxed">
                   {content}
                 </p>
 
-                {/* Оценки в стиле главной страницы */}
+                {}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
                   <div className="flex items-center gap-1 bg-gray-800/30 p-2 rounded-lg">
                     <EyeIcon className="w-4 h-4 text-amber-500" />
@@ -177,7 +177,7 @@ export const CardReview: React.FC<Props> = ({
         )}
       </AnimatePresence>
 
-      {/* Модалка подтверждения удаления */}
+      {}
       <ConfirmModal
         isOpen={showDeleteModal}
         title="Удалить отзыв?"
@@ -186,7 +186,7 @@ export const CardReview: React.FC<Props> = ({
         onCancel={handleCancelDelete}
       />
 
-      {/* Toast уведомление */}
+      {}
       {showToast && (
         <Toast
           message="Ревью успешно удален"

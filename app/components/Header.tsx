@@ -21,7 +21,7 @@ export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Закрытие дропдауна при клике вне его
+  
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -42,13 +42,13 @@ export default function Header() {
     }
   };
 
-  // Получаем первую букву имени пользователя для аватара
+  
   const userInitial = user?.username?.charAt(0).toUpperCase() || "?";
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-        {/* Логотип */}
+        {}
         <Link href="/" className="group">
           <div className="flex items-center gap-2">
             <div className="relative">
@@ -61,7 +61,7 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Навигация */}
+        {}
         <nav className="flex items-center space-x-2 md:space-x-4">
           <Link
             href="/"
@@ -89,7 +89,7 @@ export default function Header() {
             </Link>
           )}
 
-          {/* Блок авторизации */}
+          {}
           {!isAuthenticated ? (
             <Link
               href="/login"
@@ -100,7 +100,7 @@ export default function Header() {
             </Link>
           ) : (
             <div className="relative" ref={dropdownRef}>
-              {/* Кнопка профиля */}
+              {}
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="flex items-center gap-2 text-white hover:text-amber-400 transition-all font-medium focus:outline-none group"
@@ -118,7 +118,7 @@ export default function Header() {
                 <ChevronDownIcon className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              {/* Выпадающее меню */}
+              {}
               <AnimatePresence>
                 {isDropdownOpen && (
                   <motion.div
@@ -128,7 +128,7 @@ export default function Header() {
                     transition={{ duration: 0.2 }}
                     className="absolute right-0 mt-2 w-56 bg-[#1a1a1a] border border-gray-800 rounded-xl shadow-2xl py-2 z-50 backdrop-blur-sm"
                   >
-                    {/* Информация о пользователе */}
+                    {}
                     <div className="px-4 py-3 border-b border-gray-800">
                       <p className="text-sm text-gray-400">Вы вошли как</p>
                       <p className="font-semibold text-amber-400">{user?.username || "Пользователь"}</p>

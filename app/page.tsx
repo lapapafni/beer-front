@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/set-state-in-effect */
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -46,7 +46,7 @@ export default function Home() {
     setLights(generated);
   }, []);
 
-  // Статистика
+  
   const stats = [
     { label: 'Сортов пива', value: '150+', icon: BeakerIcon },
     { label: 'Рецензий', value: '100+', icon: ChatBubbleLeftIcon },
@@ -54,7 +54,7 @@ export default function Home() {
     { label: 'Лет опыта', value: '5+', icon: TrophyIcon },
   ];
 
-  // Преимущества
+  
   const features = [
     {
       title: 'Экспертные оценки',
@@ -82,7 +82,7 @@ export default function Home() {
     },
   ];
 
-  // Критерии оценки
+  
   const criteria = [
     { name: 'Внешний вид', icon: EyeIcon, color: '#f59e0b' },
     { name: 'Аромат', icon: AromaIcon, color: '#10b981' },
@@ -92,7 +92,6 @@ export default function Home() {
 
   return (
     <main className="relative w-full min-h-screen bg-[#0a0a0a] text-white overflow-hidden font-sans">
-      {/* Пульсирующие огоньки */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {lights.map((light, i) => (
           <span
@@ -110,7 +109,6 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Hero Section */}
       <section className="relative z-10 h-screen flex flex-col justify-center items-center text-center px-6">
         <div className="absolute inset-0">
           <Image
@@ -163,7 +161,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Критерии оценки */}
+          {}
           <div className="flex justify-center gap-6 mt-16">
             {criteria.map((item, index) => (
               <motion.div
@@ -182,7 +180,7 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Скролл индикатор */}
+        {}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -198,7 +196,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Статистика */}
+      {}
       <section id="stats" className="relative z-10 py-20 px-6 md:px-20 bg-gradient-to-b from-transparent to-[#0d0d0d]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -227,11 +225,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Ilya */}
+      {}
       <section id="about" className="relative z-10 py-32 px-6 md:px-20 bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            {/* Фото Ильи */}
+            {}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -239,30 +237,30 @@ export default function Home() {
               className="md:w-2/5"
             >
               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-amber-900/30 to-amber-700/30 border border-gray-800 shadow-2xl group">
-                {/* Здесь будет ваше фото */}
+                {}
                 <Image
-                  src="/photo.jpg" // Замените на название вашего файла
+                  src="/photo.jpg" 
                   alt="Илья Юровский - эксперт по пиву"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   priority
                 />
                 
-                {/* Градиент для затемнения */}
+                {}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 
-                {/* Подпись */}
+                {}
                 <div className="absolute bottom-6 left-6">
                   <p className="text-3xl font-bold text-amber-500">Илья</p>
                   <p className="text-lg text-gray-300">Юровский</p>
                 </div>
 
-                {/* Декоративный элемент */}
+                {}
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-500/20 rounded-full blur-3xl" />
               </div>
             </motion.div>
 
-            {/* Текст */}
+            {}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -306,7 +304,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Преимущества */}
+      {}
       <section className="relative z-10 py-32 px-6 md:px-20 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -357,7 +355,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {}
       <section className="relative z-10 py-32 px-6 md:px-20 bg-gradient-to-b from-[#0d0d0d] to-[#0a0a0a]">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div

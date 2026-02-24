@@ -24,24 +24,24 @@ body {
   font-family: var(--font-roboto), 'Roboto', sans-serif;
 }
 
-/* Класс для Roboto (теперь основной) */
+
 .font-roboto {
   font-family: var(--font-roboto), 'Roboto', sans-serif;
 }
 
-/* Все элементы используют Roboto */
+
 h1, h2, h3, h4, h5, h6,
 body, p, span, a, button, input, textarea {
   font-family: var(--font-roboto), 'Roboto', sans-serif;
-  font-weight: 400; /* обычное начертание по умолчанию */
+  font-weight: 400; 
 }
 
-/* Опционально: жирность для заголовков */
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-/* Классы для разной жирности */
+
 .font-normal {
   font-weight: 400;
 }

@@ -49,16 +49,16 @@ export default function Footer() {
 
   return (
     <footer className="relative z-10 bg-gradient-to-b from-[#0a0a0a] to-[#000000] text-white border-t border-gray-800/50">
-      {/* Декоративный фон */}
+      {}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-amber-600/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
-        {/* Основная сетка футера */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Колонка с логотипом */}
+          {}
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="group inline-block">
               <div className="flex items-center gap-2 mb-4">
@@ -83,7 +83,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Быстрые ссылки */}
+          {}
           <div className="col-span-1 md:col-span-1">
             <h3 className="text-lg font-semibold text-amber-500 mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-amber-500 rounded-full"></span>
@@ -104,7 +104,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Контакты */}
+          {}
           <div className="col-span-1 md:col-span-1">
             <h3 className="text-lg font-semibold text-amber-500 mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-amber-500 rounded-full"></span>
@@ -145,7 +145,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Социальные сети */}
+          {}
           <div className="col-span-1 md:col-span-1">
             <h3 className="text-lg font-semibold text-amber-500 mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-amber-500 rounded-full"></span>
@@ -174,7 +174,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Нижняя часть футера */}
+        {}
         <div className="border-t border-gray-800/50 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-gray-500">

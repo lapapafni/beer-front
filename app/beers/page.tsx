@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/set-state-in-effect */
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -68,16 +68,16 @@ export default function BeersPage() {
   }, [search]);
 
   const handleDeleteBeer = (deletedId: number) => {
-    // Удаляем пиво из состояния
+    
     setBeers(prevBeers => prevBeers.filter(beer => beer.id !== deletedId));
     
-    // Если после удаления на странице не осталось пива и это не первая страница
+    
     if (beers.length === 1 && page > 1) {
       setPage(page - 1);
     } else {
-      // Иначе просто обновляем список (можем не вызывать fetchBeers, так как уже обновили состояние)
-      // Но если хотим синхронизироваться с сервером, можно раскомментировать:
-      // fetchBeers();
+      
+      
+      
     }
   };
 
@@ -91,7 +91,7 @@ export default function BeersPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white py-20 px-6 md:px-20 font-sans">
-      {/* Декоративный фон */}
+      {}
       <DecorativeBackground />
 
       <div className="relative z-10">
@@ -108,14 +108,14 @@ export default function BeersPage() {
           </p>
         </motion.div>
 
-        {/* Фильтры и поиск */}
+        {}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           className="flex flex-wrap gap-4 mb-8 justify-center items-center"
         >
-          {/* Поиск */}
+          {}
           <div className="relative group">
             <input
               type="text"
@@ -127,7 +127,7 @@ export default function BeersPage() {
             <MagnifyingGlassIcon className="absolute left-3 top-3 w-5 h-5 text-gray-400 group-hover:text-amber-500 transition-colors" />
           </div>
 
-          {/* Сортировка */}
+          {}
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
@@ -143,7 +143,7 @@ export default function BeersPage() {
             <option value="volume">Объем</option>
           </select>
 
-          {/* Порядок */}
+          {}
           <button
             onClick={() => setOrder(order === "DESC" ? "ASC" : "DESC")}
             className="bg-gray-800/50 text-white p-3 rounded-xl backdrop-blur-sm border border-gray-700 hover:border-amber-500 transition-all flex items-center gap-2"
@@ -156,7 +156,7 @@ export default function BeersPage() {
             <span>{order === "DESC" ? "По убыванию" : "По возрастанию"}</span>
           </button>
 
-          {/* Фильтр по оценкам */}
+          {}
           <select
             value={ratedFilter === undefined ? "" : ratedFilter ? "rated" : "unrated"}
             onChange={(e) => {
@@ -170,7 +170,7 @@ export default function BeersPage() {
             <option value="rated">Оцененные</option>
             <option value="unrated">Не оцененные</option>
           </select>
-          {/* Переключатель вида */}
+          {}
           <div className="flex gap-2 ml-2 bg-gray-800/30 rounded-xl p-1 backdrop-blur-sm border border-gray-700">
             <button
               onClick={() => setViewMode("grid")}
@@ -195,7 +195,7 @@ export default function BeersPage() {
           </div>
         </motion.div>
 
-        {/* Статистика */}
+        {}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -204,7 +204,7 @@ export default function BeersPage() {
         >
         </motion.div>
 
-        {/* Сетка с пивом */}
+        {}
         <AnimatePresence mode="wait">
           <motion.div
             key={viewMode + page}
@@ -262,7 +262,7 @@ export default function BeersPage() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Пагинация */}
+        {}
         {beers.length > 0 && (
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

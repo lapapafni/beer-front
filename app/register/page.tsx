@@ -19,7 +19,7 @@ export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // 🛡 Защита от входа если уже залогинен
+  
   useEffect(() => {
     if (isAuthenticated) {
       router.push("/");

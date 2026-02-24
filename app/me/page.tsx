@@ -133,7 +133,7 @@ export default function MePage() {
     setConfirmOpen(false);
   };
 
-  // Статистика по оценкам
+  
   const scoreStats = {
     appearance: reviews.reduce((acc, r) => acc + r.apperanceScore, 0) / (reviews.length || 1),
     aroma: reviews.reduce((acc, r) => acc + r.aromaScore, 0) / (reviews.length || 1),
@@ -143,23 +143,23 @@ export default function MePage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white px-6 md:px-20 py-24 font-sans">
-      {/* Декоративный фон */}
+      {}
       <DecorativeBackground />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Профиль пользователя */}
+        {}
         <motion.section 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="bg-[#121212] rounded-3xl shadow-lg border border-gray-800 overflow-hidden mb-12"
         >
-          {/* Шапка профиля с градиентом */}
+          {}
           <div className="h-32 bg-gradient-to-r from-amber-600/20 to-amber-400/20 relative">
             <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10"></div>
           </div>
 
           <div className="px-8 pb-8">
-            {/* Аватар */}
+            {}
             <div className="flex items-end gap-6 -mt-16">
               <div className="relative">
                 <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-600 to-amber-400 flex items-center justify-center text-4xl font-bold shadow-xl border-4 border-[#121212]">
@@ -184,7 +184,7 @@ export default function MePage() {
               </div>
             </div>
 
-            {/* Статистика */}
+            {}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
               <div className="bg-gray-800/30 p-6 rounded-xl border border-gray-700/50">
                 <div className="flex items-center gap-2 text-amber-500 mb-2">
@@ -221,7 +221,7 @@ export default function MePage() {
               </div>
             </div>
 
-            {/* Детальная статистика по оценкам */}
+            {}
             {reviews.length > 0 && (
               <div className="mt-8 p-6 bg-gray-800/20 rounded-xl border border-gray-700/50">
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
@@ -259,7 +259,7 @@ export default function MePage() {
           </div>
         </motion.section>
 
-        {/* Рецензии пользователя */}
+        {}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -314,11 +314,11 @@ export default function MePage() {
                       }}
                       className="group relative bg-[#121212] rounded-2xl shadow-lg hover:shadow-amber-500/10 transition-all duration-300 border border-gray-800 hover:border-amber-500/30 cursor-pointer overflow-hidden"
                     >
-                      {/* Легкий подсвет */}
+                      {}
                       <div className="absolute inset-0 bg-amber-500 opacity-0 group-hover:opacity-5 blur-xl transition-opacity pointer-events-none" />
 
                       <div className="relative z-10 p-6">
-                        {/* Заголовок */}
+                        {}
                         <div className="flex items-start justify-between mb-4">
                           <div>
                             <h3 className="text-xl font-bold group-hover:text-amber-500 transition-colors">
@@ -331,13 +331,13 @@ export default function MePage() {
                           </div>
 
                           <div className="flex items-center gap-4">
-                            {/* Общая оценка */}
+                            {}
                             <div className="flex items-center gap-1 bg-amber-500/10 px-3 py-1.5 rounded-full border border-amber-500/30">
                               <StarIconSolid className="w-4 h-4 text-amber-500" />
                               <span className="font-semibold text-amber-500">{totalScore}</span>
                             </div>
 
-                            {/* Кнопка удаления */}
+                            {}
                             <button
                               onClick={(e) => {
                                 e.stopPropagation();
@@ -350,12 +350,12 @@ export default function MePage() {
                           </div>
                         </div>
 
-                        {/* Текст рецензии */}
+                        {}
                         <p className="text-gray-300 mb-4 leading-relaxed">
                           {r.content}
                         </p>
 
-                        {/* Оценки */}
+                        {}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                           <ScoreBlock 
                             label="Внешний вид" 
@@ -391,7 +391,7 @@ export default function MePage() {
           )}
         </motion.section>
 
-        {/* Ачивки (заблокировано) */}
+        {}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -440,7 +440,7 @@ export default function MePage() {
         </motion.section>
       </div>
 
-      {/* Модалка подтверждения */}
+      {}
       <ConfirmModal
         isOpen={confirmOpen}
         title="Удалить рецензию?"
@@ -449,7 +449,7 @@ export default function MePage() {
         onCancel={() => setConfirmOpen(false)}
       />
 
-      {/* Toast уведомление */}
+      {}
       {toast && (
         <Toast
           message={toast.message}
@@ -461,7 +461,7 @@ export default function MePage() {
   );
 }
 
-// Компонент для отображения оценки с иконкой
+
 function ScoreBlock({ 
   label, 
   value, 
@@ -486,7 +486,7 @@ function ScoreBlock({
   );
 }
 
-// Компонент для статистической шкалы
+
 function StatBar({ 
   label, 
   value, 
@@ -519,7 +519,7 @@ function StatBar({
   );
 }
 
-// Компонент карточки достижения
+
 function AchievementCard({ 
   title, 
   description, 

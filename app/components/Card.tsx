@@ -31,7 +31,7 @@ interface Props {
   createdAt: string;
   imageUrl?: string | null;
   viewMode?: "grid" | "list";
-  onDelete?: (id: number) => void; // Добавляем колбэк
+  onDelete?: (id: number) => void; 
 }
 
 export const Card: React.FC<Props> = ({
@@ -47,7 +47,7 @@ export const Card: React.FC<Props> = ({
   createdAt,
   imageUrl,
   viewMode = "grid",
-  onDelete, // Получаем колбэк
+  onDelete, 
 }) => {
   const router = useRouter();
   const { hasRole } = useAuth();
@@ -55,7 +55,7 @@ export const Card: React.FC<Props> = ({
   const [deleting, setDeleting] = useState(false);
 
   const handleClick = (e: React.MouseEvent) => {
-    // Не переходим на страницу пива, если кликнули на кнопку удаления
+    
     if ((e.target as HTMLElement).closest('.delete-button')) {
       return;
     }
@@ -73,11 +73,11 @@ export const Card: React.FC<Props> = ({
       await deleteBeer(id);
       setShowDeleteModal(false);
       
-      // Если есть колбэк, вызываем его для удаления из списка
+      
       if (onDelete) {
         onDelete(id);
       } else {
-        // Если нет колбэка, перезагружаем страницу
+        
         window.location.reload();
       }
       
@@ -110,7 +110,7 @@ export const Card: React.FC<Props> = ({
           className="relative bg-[#121212] rounded-2xl shadow-lg hover:shadow-amber-500/20 transition-all duration-300 overflow-hidden font-sans cursor-pointer group border border-gray-800 hover:border-amber-500/50"
         >
           <div className="flex">
-            {/* Изображение */}
+            {}
             <div className="w-32 h-32 flex-shrink-0 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
               {imageUrl ? (
                 <img
@@ -127,9 +127,9 @@ export const Card: React.FC<Props> = ({
               )}
             </div>
 
-            {/* Контент */}
+            {}
             <div className="flex-1 p-4 relative">
-              {/* Кнопка удаления для админа */}
+              {}
               {hasRole("admin") && (
                 <button
                   onClick={handleDeleteClick}
@@ -172,7 +172,7 @@ export const Card: React.FC<Props> = ({
           </div>
         </div>
 
-        {/* Модалка подтверждения удаления */}
+        {}
         <ConfirmModal
           isOpen={showDeleteModal}
           title="Удалить пиво?"
@@ -184,17 +184,17 @@ export const Card: React.FC<Props> = ({
     );
   }
 
-  // Grid view
+  
   return (
     <>
       <div
         onClick={handleClick}
         className="relative bg-[#121212] rounded-2xl shadow-lg hover:shadow-amber-500/20 transition-all duration-300 overflow-hidden font-sans cursor-pointer group border border-gray-800 hover:border-amber-500/50 h-full flex flex-col"
       >
-        {/* Легкий подсвет */}
+        {}
         <div className="absolute inset-0 rounded-2xl bg-amber-500 opacity-0 group-hover:opacity-10 blur-xl transition-opacity pointer-events-none" />
 
-        {/* Изображение */}
+        {}
         <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
           {imageUrl ? (
             <img
@@ -208,18 +208,18 @@ export const Card: React.FC<Props> = ({
             />
           ) : null}
           
-          {/* Плейсхолдер */}
+          {}
           <div className={`placeholder w-full h-full flex items-center justify-center ${imageUrl ? 'hidden' : ''}`}>
             <BeakerIcon className="w-16 h-16 text-amber-500/30 group-hover:scale-110 transition-transform" />
           </div>
 
-          {/* Бейдж с общей оценкой */}
+          {}
           <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm text-amber-500 px-3 py-1 rounded-full text-sm font-semibold border border-amber-500/30 flex items-center gap-1">
             <StarIcon className="w-4 h-4" />
             <span>{totalScore}</span>
           </div>
 
-          {/* Кнопка удаления для админа */}
+          {}
           {hasRole("admin") && (
             <button
               onClick={handleDeleteClick}
@@ -230,7 +230,7 @@ export const Card: React.FC<Props> = ({
             </button>
           )}
 
-          {/* Бейдж с ценой и объемом */}
+          {}
           <div className="absolute bottom-3 left-3 right-3 flex justify-between">
             <div className="bg-black/70 backdrop-blur-sm text-gray-300 px-3 py-1 rounded-full text-sm border border-gray-700 flex items-center gap-1">
               <CurrencyDollarIcon className="w-4 h-4 text-amber-500" />
@@ -243,7 +243,7 @@ export const Card: React.FC<Props> = ({
           </div>
         </div>
 
-        {/* Контент */}
+        {}
         <div className="relative z-10 p-5 flex-1 flex flex-col">
           <h2 className="text-xl font-bold mb-2 group-hover:text-amber-500 transition-colors line-clamp-1">
             {name}
@@ -253,7 +253,7 @@ export const Card: React.FC<Props> = ({
             {description || "Нет описания"}
           </p>
 
-          {/* Оценки */}
+          {}
           <div className="grid grid-cols-4 gap-2 mb-4">
             <div className="text-center">
               <div className="text-xs text-gray-500 mb-1 flex items-center justify-center gap-1">
@@ -285,7 +285,7 @@ export const Card: React.FC<Props> = ({
             </div>
           </div>
 
-          {/* Дата */}
+          {}
           <div className="text-xs text-gray-600 flex items-center gap-1">
             <CalendarIcon className="w-3 h-3" />
             <span>{new Date(createdAt).toLocaleDateString("ru-RU")}</span>
@@ -293,7 +293,7 @@ export const Card: React.FC<Props> = ({
         </div>
       </div>
 
-      {/* Модалка подтверждения удаления */}
+      {}
       <ConfirmModal
         isOpen={showDeleteModal}
         title="Удалить пиво?"
